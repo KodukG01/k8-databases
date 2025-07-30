@@ -76,6 +76,9 @@ spec:
       containers:
       - name: mysql
         image: gautamjames/mysql:v1
+        envFrom:
+        - SecretRef:
+            name: mysql
         volumeMounts:
         - name: mysql-data
           mountPath: /var/lib/mysql
